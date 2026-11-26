@@ -240,7 +240,7 @@ class Game(Widget):
         self.threat = self.cam - 260
         self.lives, self.bananas, self.best_h = 3, 0, 0
         self.inv, self.shield, self.spring = 0, False, False
-        self.state, self.lvl, self.face = 'play', 0.1
+        self.state, self.lvl, self.face = 'play', 0, 1
         self.wind, self.wind_t = 0, 3
         self.timers = {'coco': 2.0, 'bird': 3.0, 'met': 2.0, 'ufo': 4.0}
         self.over_lbl.text = ''
