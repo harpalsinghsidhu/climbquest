@@ -114,7 +114,7 @@ def track_space():              # driving minor arpeggios
 def save_wav(path, samples):
     buf = array.array('h', (int(max(-1, min(1, v)) * 32767) for v in samples))
     with wave.open(path, 'wb') as w:
-        w.setchannels(1)
+        w.setnchannels(1)
         w.setsampwidth(2)
         w.setframerate(RATE)
         w.writeframes(buf.tobytes())
@@ -313,7 +313,7 @@ class Game(Widget):
         self.sfx('over')
         self.music_vol(0.15)
         self.over_t = self.time
-        self.over_lbl.text = ('GAME OVER\nScore %d\nHeight %d m\nBest %\nTap to play again'
+        self.over_lbl.text = ('GAME OVER\nScore %d\nHeight %d m\nBest %d\nTap to play again'
                               % (self.total(), self.best_h, self.hi))
                               
     # ------ touch ---------
